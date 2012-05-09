@@ -1,0 +1,18 @@
+[user]
+  name = Roy Kolak
+  email = roy.kolak@gmail.com
+[color]
+  ui = true
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  ch = checkout
+  br = branch
+  me = merge
+  logp = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+[branch]
+  autosetuprebase = always
+[core]
+  excludesfile = ~/.gitignore
+
