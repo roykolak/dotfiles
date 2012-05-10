@@ -43,11 +43,6 @@ if [ "$LOGNAME" = "root" ]; then
     COLOR1="${RED}"
     COLOR2="${BROWN}"
     P="#"
-elif hostname | grep -q 'github\.com'; then
-    GITHUB=yep
-    COLOR1="\[\e[0;94m\]"
-    COLOR2="\[\e[0;92m\]"
-    P="\$"
 else
     COLOR1="${GREEN}"
     COLOR2="${BROWN}"
@@ -95,7 +90,7 @@ branch_color () {
 }
 
 prompt_color() {
-  PS1="${COLOR2}${COLOR1}\W${GREY}${COLOR2}${PS_CLEAR} $(parse_git_branch): "
+  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2}${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
