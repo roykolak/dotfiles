@@ -8,6 +8,7 @@ PATH="/usr/local/bin:$PATH"
 shopt -s histverify
 
 source ~/.completion/git-completion.bash
+source ~/.completion/rake.bash
 
 # notify of bg job completion immediately
 set -o notify
