@@ -1,2 +1,4 @@
 .netrwhist
 .vim/bundle/*
+.env
+Guardfile.local
