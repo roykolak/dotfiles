@@ -45,7 +45,7 @@ test -n "$dircolors" && {
 unset dircolors
 
 test -n "$LS_COMMON" &&
-alias ls="command ls $LS_COMMON --color=tty"
+#alias ls="command ls $LS_COMMON --color=tty"
 
 # ----------------------------------------------------------------------
 # PROMPT
@@ -82,7 +82,7 @@ prompt_compact() {
 }
 
 prompt_color() {
-  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} $(__git_ps1)${PS_CLEAR}: "
+  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} ${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
