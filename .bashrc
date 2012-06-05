@@ -17,6 +17,10 @@ set -o notify
 test -r ~/.shenv &&
 . ~/.shenv
 
+# put ~/bin on PATH if you have it
+test -d "$HOME/bin" &&
+PATH="$HOME/bin:$PATH"
+
 # history stuff
 HISTCONTROL=ignoreboth
 HISTFILESIZE=10000
@@ -69,20 +73,9 @@ else
     P="\$"
 fi
 
-prompt_simple() {
-    unset PROMPT_COMMAND
-    PS1="[\u@\h:\w]\$ "
-    PS2="> "
-}
-
-prompt_compact() {
-    unset PROMPT_COMMAND
-    PS1="${COLOR1}${P}${PS_CLEAR} "
-    PS2="> "
-}
-
 prompt_color() {
-  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} ${PS_CLEAR}: "
+  BRANCH="git --git-dir=\$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'"
+  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} \$(${BRANCH})${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
