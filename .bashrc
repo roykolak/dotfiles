@@ -61,7 +61,7 @@ test -n "$LS_COMMON" &&
 RED="\[\033[0;31m\]"
 BROWN="\[\033[0;33m\]"
 GREY="\[\033[0;97m\]"
-BLUE="\[\033[0;33m\]"
+BLUE="\[\033[0;34m\]"
 GREEN="\[\033[0;32m\]"
 PS_CLEAR="\[\033[0m\]"
 SCREEN_ESC="\[\033k\033\134\]"
@@ -76,9 +76,17 @@ else
     P="\$"
 fi
 
+function git_branch {
+  echo `git --git-dir=\$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
+}
+
+function git_status {
+  STATUS=`git --git-dir=\$PWD/.git/ status 2> /dev/null | tail -n1`
+  [[ ${STATUS} != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+
 prompt_color() {
-  BRANCH="git --git-dir=\$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'"
-  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} \$(${BRANCH})${PS_CLEAR}: "
+  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} ${BLUE}\$(git_branch)${RED}\$(git_status) ${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
