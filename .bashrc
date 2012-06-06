@@ -76,20 +76,22 @@ else
     P="\$"
 fi
 
-function git_branch {
-  echo `git --git-dir=\$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`
-}
-
 function git_status {
-  STATUS=`git --git-dir=\$PWD/.git/ status 2> /dev/null | tail -n1`
-  [[ ${STATUS} != "nothing to commit (working directory clean)" ]] && echo "*"
+  STATUS=$(git --git-dir=$PWD/.git/ status 2> /dev/null | tail -n1)
+  if [[ "${STATUS}" != "" ]] ; then
+    [[ ${STATUS} != "nothing to commit (working directory clean)" ]] && echo "*"
+  fi
 }
 
-prompt_color() {
+function git_branch {
+  git --git-dir=$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+prompt() {
   PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} ${BLUE}\$(git_branch)${RED}\$(git_status) ${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
-prompt_color
+prompt
