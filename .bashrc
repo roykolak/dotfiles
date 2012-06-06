@@ -52,7 +52,7 @@ test -n "$dircolors" && {
 unset dircolors
 
 test -n "$LS_COMMON" &&
-#alias ls="command ls $LS_COMMON --color=tty"
+alias ls="command ls $LS_COMMON --color=tty"
 
 # ----------------------------------------------------------------------
 # PROMPT
