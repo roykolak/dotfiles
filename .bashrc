@@ -18,10 +18,6 @@ source ~/.completion/rake.bash
 # notify of bg job completion immediately
 set -o notify
 
-# source ~/.shenv now if it exists
-test -r ~/.shenv &&
-. ~/.shenv
-
 # put ~/bin on PATH if you have it
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
@@ -39,9 +35,6 @@ export EDITOR
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# we always pass these to ls(1)
-LS_COMMON="-hBG"
-
 # if the dircolors utility is available, set that up to
 dircolors="$(type -P gdircolors dircolors | head -1)"
 test -n "$dircolors" && {
@@ -53,8 +46,7 @@ test -n "$dircolors" && {
 }
 unset dircolors
 
-test -n "$LS_COMMON" &&
-alias ls="command ls $LS_COMMON --color=tty"
+alias ls="ls -hBG --color=tty"
 
 # ----------------------------------------------------------------------
 # PROMPT
@@ -81,3 +73,8 @@ prompt() {
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
 prompt
+
+# source ~/.shenv now if it exists
+test -r ~/.shenv &&
+. ~/.shenv
+
