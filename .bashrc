@@ -10,6 +10,8 @@ PATH="/usr/local/bin:$PATH"
 
 shopt -s histverify
 
+source ~/.colors
+
 source ~/.completion/git-completion.bash
 source ~/.completion/rake.bash
 
@@ -57,29 +59,13 @@ alias ls="command ls $LS_COMMON --color=tty"
 # ----------------------------------------------------------------------
 # PROMPT
 # ----------------------------------------------------------------------
-
-RED="\[\033[0;31m\]"
-BROWN="\[\033[0;33m\]"
-GREY="\[\033[0;97m\]"
-BLUE="\[\033[0;34m\]"
-GREEN="\[\033[0;32m\]"
 PS_CLEAR="\[\033[0m\]"
 SCREEN_ESC="\[\033k\033\134\]"
-
-if [ "$LOGNAME" = "root" ]; then
-    COLOR1="${RED}"
-    COLOR2="${BROWN}"
-    P="#"
-else
-    COLOR1="${GREEN}"
-    COLOR2="${BROWN}"
-    P="\$"
-fi
 
 function git_status {
   STATUS=$(git --git-dir=$PWD/.git/ status 2> /dev/null | tail -n1)
   if [[ "${STATUS}" != "" ]] ; then
-    [[ ${STATUS} != "nothing to commit (working directory clean)" ]] && echo "*"
+    [[ ${STATUS} != "nothing to commit (working directory clean)" ]] && echo " ⚡"
   fi
 }
 
@@ -88,7 +74,7 @@ function git_branch {
 }
 
 prompt() {
-  PS1="${COLOR2}${COLOR2}\u ${COLOR1}\W${GREY}${COLOR2} ${BLUE}\$(git_branch)${RED}\$(git_status) ${PS_CLEAR}: "
+  PS1="${Green}\u ${Brown}\W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
   PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
