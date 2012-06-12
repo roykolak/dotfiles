@@ -48,6 +48,8 @@ unset dircolors
 
 alias ls="ls -hBG --color=tty"
 
+[[ $- = *i* ]] && bind TAB:menu-complete
+
 # ----------------------------------------------------------------------
 # PROMPT
 # ----------------------------------------------------------------------
@@ -77,4 +79,3 @@ prompt
 # source ~/.shenv now if it exists
 test -r ~/.shenv &&
 . ~/.shenv
-
