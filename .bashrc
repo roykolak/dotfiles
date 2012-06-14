@@ -35,6 +35,8 @@ export EDITOR
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+export TERM=xterm-256color
+
 # if the dircolors utility is available, set that up to
 dircolors="$(type -P gdircolors dircolors | head -1)"
 test -n "$dircolors" && {
