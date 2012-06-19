@@ -70,9 +70,18 @@ function git_branch {
 }
 
 prompt() {
-  PS1="${Green}\u ${Brown}\W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
-  PS2="\[[33;1m\]continue \[[0m[1m\]> "
+  if [[ $? != "0" ]] ; then
+    PS1="${Red}\u ${Brown}\W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+  else
+    if [ -n "$SSH_CLIENT" ]; then
+      PS1="${Green}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+    else
+      PS1="${Yellow}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+    fi
+  fi
+  PS2="> "
 }
+PROMPT_COMMAND=prompt
 
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
