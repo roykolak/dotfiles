@@ -20,6 +20,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
 Bundle 'juvenn/mustache.vim'
 Bundle 'tomtom/quickfixsigns_vim'
+Bundle 'groenewege/vim-less'
+Bundle 'othree/html5-syntax.vim'
 
 " How many lines of history to remember
 set history=700
