@@ -62,18 +62,24 @@ function git_status {
   fi
 }
 
+function vim_shell {
+  if [ -n "$UNDER_VIM" ]; then
+    echo "* "
+  fi
+}
+
 function git_branch {
   git --git-dir=$PWD/.git/ branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
 }
 
 prompt() {
   if [[ $? != "0" ]] ; then
-    PS1="${Red}\u ${Brown}\W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+    PS1="$(vim_shell)${Red}\u ${Brown}\W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
   else
     if [ -n "$SSH_CLIENT" ]; then
-      PS1="${Green}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+      PS1="$(vim_shell)${Green}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
     else
-      PS1="${Yellow}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
+      PS1="$(vim_shell)${Yellow}\u \W ${Blue}\$(git_branch)${Red}\$(git_status) ${PS_CLEAR}: "
     fi
   fi
   PS2="> "

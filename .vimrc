@@ -105,3 +105,6 @@ let $JS_CMD='node'
 
 " Automatically remove whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" To detect if in vim sub shell
+let $UNDER_VIM='Yes, probably.'
