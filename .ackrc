@@ -1,3 +1,4 @@
 --type-add=haml=.haml
 --type-add=sass=.sass
 --type-add=coffee=.coffee
+--ignore-dir=public/assets
