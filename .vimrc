@@ -13,7 +13,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'mattn/gist-vim'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/jslint.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -91,14 +91,18 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 set so=7
 
 " Mappings
-map <F3> <ESC>:NERDTreeToggle<CR>
 map ? <ESC>:set hls!<CR>
 
-" Bigger search range for command-t
-let g:CommandTMaxFiles=30000
+" Ctrl P mapping
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
-" Ignore dumb files for command-t
+" Infinite search range for Ctrl P
+let g:ctrlp_max_files = 0
+
+" Ignore dumb files
 set wildignore+=.git,tmp,log,*.png,*.jpg,*.jpeg,*.gif
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " For jslint
 let $JS_CMD='node'
