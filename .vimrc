@@ -113,3 +113,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " To detect if in vim sub shell
 let $UNDER_VIM='Yes, probably.'
+
+" Goodbye arrow keys
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
