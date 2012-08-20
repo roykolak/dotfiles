@@ -114,6 +114,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " To detect if in vim sub shell
 let $UNDER_VIM='Yes, probably.'
 
+" Show more results for ctrlP
+let g:ctrlp_max_height = 25
+
 " Goodbye arrow keys
 noremap  <Up> ""
 noremap! <Up> <Esc>
