@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Active bundles
-Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
