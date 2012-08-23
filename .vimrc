@@ -10,9 +10,7 @@ call vundle#rc()
 " Active bundles
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
-Bundle 'mattn/gist-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-scripts/jslint.vim'
