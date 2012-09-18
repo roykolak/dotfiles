@@ -100,6 +100,7 @@ let g:ctrlp_max_files = 0
 " Ignore dumb files
 set wildignore+=.git,tmp,log,*.png,*.jpg,*.jpeg,*.gif
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
 
 " For jslint
 let $JS_CMD='node'
