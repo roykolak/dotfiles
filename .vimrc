@@ -39,6 +39,9 @@ set smartcase
 " Match search as you type
 set incsearch
 
+" auto indent when inserting a new line
+set autoindent
+
 " Quickly jump to matching bracket
 set showmatch
 set mat=2
