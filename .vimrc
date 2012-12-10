@@ -116,13 +116,3 @@ let $UNDER_VIM='Yes, probably.'
 
 " Show more results for ctrlP
 let g:ctrlp_max_height = 25
-
-" Goodbye arrow keys
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
