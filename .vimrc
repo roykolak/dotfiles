@@ -90,9 +90,6 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 " Lines to the cursors - when moving vertical..
 set so=7
 
-" Mappings
-map ? <ESC>:set hls!<CR>
-
 " Ctrl P mapping
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
