@@ -113,3 +113,6 @@ let $UNDER_VIM='Yes, probably.'
 
 " Show more results for ctrlP
 let g:ctrlp_max_height = 25
+
+" Adjust keycode timeout length
+set ttimeoutlen=100
