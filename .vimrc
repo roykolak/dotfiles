@@ -81,9 +81,6 @@ set cursorline
 " Fancy symbols for powerline
 let g:Powerline_symbols = 'fancy'
 
-" Create private gists by default
-let g:gist_private = 1
-
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 
@@ -112,7 +109,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 let $UNDER_VIM='Yes, probably.'
 
 " Show more results for ctrlP
-let g:ctrlp_max_height = 25
+let g:ctrlp_max_height = 50
 
 " Adjust keycode timeout length
 set ttimeoutlen=100
