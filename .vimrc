@@ -19,6 +19,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'groenewege/vim-less'
 Bundle 'othree/html5-syntax.vim'
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'othree/coffee-check.vim'
 
 " How many lines of history to remember
