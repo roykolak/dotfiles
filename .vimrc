@@ -12,14 +12,16 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-scripts/jslint.vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
-Bundle 'juvenn/mustache.vim'
 Bundle 'airblade/vim-gitgutter'
+
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'juvenn/mustache.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'hail2u/vim-css3-syntax'
+
+Bundle 'vim-scripts/jslint.vim'
 Bundle 'othree/coffee-check.vim'
 
 " How many lines of history to remember
