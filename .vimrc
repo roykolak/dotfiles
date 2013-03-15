@@ -20,6 +20,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
 
 Bundle 'vim-scripts/jslint.vim'
 Bundle 'othree/coffee-check.vim'
@@ -73,9 +74,6 @@ set t_Co=256
 
 " Set color scheme
 colorscheme wombat256
-
-" Highlight search term
-set hls
 
 " Highlight current line
 highlight CursorLine ctermbg=238

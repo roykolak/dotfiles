@@ -45,7 +45,7 @@ test -n "$dircolors" && {
 }
 unset dircolors
 
-alias ls="ls -hBG --color=tty"
+#alias ls="ls -hBG --color=tty"
 
 [[ $- = *i* ]] && bind TAB:menu-complete
 
