@@ -114,3 +114,7 @@ let g:ctrlp_max_height = 50
 
 " Adjust keycode timeout length
 set ttimeoutlen=100
+
+" Split to the right, below
+set splitbelow
+set splitright
