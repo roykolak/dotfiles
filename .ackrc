@@ -1,5 +1,6 @@
 --type-add=haml=.haml
 --type-add=sass=.sass
+--type-add=less=.less
 --type-add=coffee=.coffee
 --type-add=cuke=.feature
 --ignore-dir=public/assets
