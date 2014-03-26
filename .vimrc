@@ -25,6 +25,9 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'vim-scripts/jslint.vim'
 Bundle 'othree/coffee-check.vim'
 
+" Syntax highlighting for json
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 " How many lines of history to remember
 set history=700
 
